@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bell Tech - Sistema de Timbre Automatizado</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="images/logo.jpeg" type="image/jpeg">
+  <link href="https://db.onlinewebfonts.com/c/14936bb7a4b6575fd2eee80a3ab52cc2?family=Feather+Bold" rel="stylesheet">
+  <script src="scripts.js" defer></script>
+</head>
+<body>
+  <!-- Loader Animado Interactivo Mejorado -->
+  <div id="loader" aria-label="Cargando Syslity">
+    <div class="loader-logo-container">
+      <img src="images/logo.jpeg" alt="Logo Syslity" class="loader-logo">
+      <canvas class="loader-particles"></canvas>
+      <div class="loader-glow"></div>
+      <div class="loader-spinner"></div>
+    </div>
+    <div class="loader-text">Cargando Bell Tech...</div>
+  </div>
+  <!-- Overlay global para mobile-menu y evitar fondo blanco -->
+  <div class="global-overlay"></div>
+
+  <!-- Navbar Moderno Mejorado -->
+  <header class="navbar" id="navbar">
+    <div class="navbar-container">
+      <a href="#" class="logo-link"><img src="images/logo.jpeg" alt="BellTech Logo" class="logo-img logo-3d"><span class="logo-text">Bell Tech</span></a>
+      <nav class="nav-links desktop-nav">
+        <a href="#servicios" class="nav-link">
+          <i class="fas fa-bell nav-icon"></i> Funciones
+        </a>
+        <a href="#tecnicos" class="nav-link"><i class="fas fa-user-shield nav-icon"></i>
+           Tecnicos
+          
+        </a>
+        <a href="#compra-venta" class="nav-link"><i class="fas fa-microchip nav-icon"></i> Dispositivos</a>
+        <!-- <a href="#reclutamiento" class="nav-link"><i class="fas fa-briefcase nav-icon"></i> Aliados</a> -->
+        <a href="#contacto" class="nav-link"><i class="fas fa-envelope nav-icon"></i> Contacto</a>
+      </nav>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <button class="close-mobile-menu" id="closeMobileMenu" aria-label="Cerrar menú"><i class="fas fa-times"></i></button>
+      <a href="#servicios" class="mobile-nav-link">Servicios</a>
+      <a href="#tecnicos" class="mobile-nav-link">Técnicos</a>
+      <a href="#compra-venta" class="mobile-nav-link">Compra/Venta</a>
+      <a href="#reclutamiento" class="mobile-nav-link">Reclutamiento</a>
+      <a href="#contacto" class="mobile-nav-link">Contacto</a>
+      <button class="theme-toggle-mobile" aria-label="Cambiar tema"><i class="fas fa-moon"></i></button>
+    </nav>
+  </header>
+
+  <!-- Hero Section con Cards Flotantes y animaciones -->
+  <section class="hero">
+    <div class="hero-background">
+      <div class="hero-shape shape-1"></div>
+      <div class="hero-shape shape-2"></div>
+      <div class="hero-shape shape-3"></div>
+    </div>
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fas fa-bell badge-icon"></i>
+          <span class="badge-text">Timbre preciso e inteligente </span>
+        </div>
+        <h1 class="hero-title">
+          <span class="title-line">Horarios inteligentes para</span>
+          <span id="title-down" class="title-line highlight"> Instituciones Modernas</span>
+        </h1>
+        <p class="hero-subtitle">Bell Tech automatiza tus horarios con un sistema de timbre inteligente y configurable desde nuestra app. Más control, menos interrupciones.</p>
+        <div class="hero-buttons">
+          <a href="#servicios"><button class="animated-button btn-primary"><span class="text">Conoce Bell Tech</span></button></a>
+          
+        </div>
+      </div>
+      <div class="hero-image" id="hero-image">
+        <div class="image-container">
+          <img src="images/logo.jpeg" alt="Syslity Logo" class="hero-img">
+          <div class="image-overlay"></div>
+          <!-- Cards flotantes animadas -->
+          <div class="floating-card card-1">
+            <div class="card-icon"><i class="fas fa-clock"></i></div>
+            <div class="card-content">
+              <span class="card-title">Horarios Precisos</span>
+              
+            </div>
+          </div>
+          <div class="floating-card card-2">
+            <div class="card-icon"><i class="fas fa-bell"></i></div>
+            <div class="card-content">
+              <span class="card-title">Timbre automático</span>
+              
+            </div>
+          </div>
+          <div class="floating-card card-3">
+            <div class="card-icon"><i class="fas fa-sliders-h"></i></div>
+            <div class="card-content">
+              <span class="card-title">Control Centralizado</span>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios" class="features">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-badge">Nuestros Servicios</span>
+      <h2 class="section-title">¿Qué Ofrecemos?</h2>
+      <p class="section-subtitle">Soluciones electrónicas para instituciones que buscan orden y eficiencia.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="feature-icon-wrapper"><i class="fas fa-stopwatch feature-icon"></i></div>
+        <div class="feature-content">
+          <h3>Control de timbre</h3>
+          <p>Automatiza los horarios escolares sin errores ni omisiones. Precisión diaria garantizada.</p>
+        </div>
+      </div>
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="feature-icon-wrapper"><i class="fas fa-sliders-h feature-icon"></i></div>
+        <div class="feature-content">
+          <h3>Gestión desde app</h3>
+          <p>Modifica los horarios del timbre desde tu móvil o computador con total libertad.</p>
+        </div>
+      </div>
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="feature-icon-wrapper"><i class="fas fa-school feature-icon"></i></div>
+        <div class="feature-content">
+          <h3>Soporte para instituciones</h3>
+          <p>Diseñado para colegios, universidades y centros educativos. Fácil integración con horarios académicos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Técnicos -->
+  <section id="tecnicos" class="tecnicos">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-badge">Nuestro Equipo</span>
+      <h2 class="section-title">Técnicos Certificados</h2>
+      <p class="section-subtitle">Conoce a nuestros expertos, revisa sus calificaciones y contacta directamente.</p>
+    </div>
+    <div class="tecnicos-grid">
+      <div class="tecnico-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="tecnico-avatar"><img style="border-radius: 100%;" src="https://cdn-icons-png.flaticon.com/512/1085/1085421.png" alt="Tecnico 1" width="90px" height="90px"></div>
+        <div class="tecnico-info">
+          <h3>Juan Tulcan</h3>
+          <div class="tecnico-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+            <span>4.5</span>
+          </div>
+          <ul class="tecnico-skills">
+            <li>Seguridad</li>
+            <li>Soporte Técnico</li>
+            <li>Mantenimiento</li>
+          </ul>
+          <a href="https://wa.me/573015688088?text=Hola%20tengo%20una%20inquietud" class="tecnico-contacto"><i class="fab fa-whatsapp"></i> Contactar</a>
+        </div>
+      </div>
+      <div class="tecnico-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="tecnico-avatar"><img style="border-radius: 100%;" src="https://cdn-icons-png.flaticon.com/512/1085/1085421.png" alt="Tecnico 2" width="90px" height="90px"></div>
+        <div class="tecnico-info">
+          <h3>Angie Luna</h3>
+          <div class="tecnico-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+            <span>4.0</span>
+          </div>
+          <ul class="tecnico-skills">
+            <li>Seguridad</li>
+            <li>Soporte Técnico</li>
+            <li>Mantenimiento</li>
+          </ul>
+          <a href="https://wa.me/573027593737?text=Hola%20tengo%20una%20inquietud" class="tecnico-contacto"><i class="fab fa-whatsapp"></i> Contactar</a>
+        </div>
+      </div>
+
+      <div class="tecnico-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="tecnico-avatar"><img style="border-radius: 100%;" src="https://cdn-icons-png.flaticon.com/512/1085/1085421.png" alt="Tecnico 2" width="90px" height="90px"></div>
+        <div class="tecnico-info">
+          <h3>Maicol</h3>
+          <div class="tecnico-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+            <span>4.0</span>
+          </div>
+          <ul class="tecnico-skills">
+            <li>Seguridad</li>
+            <li>Soporte Técnico</li>
+            <li>Mantenimiento</li>
+          </ul>
+          <a href="https://wa.me/573154244242?text=Hola%20tengo%20una%20inquietud" class="tecnico-contacto"><i class="fab fa-whatsapp"></i> Contactar</a>
+        </div>
+      </div>
+
+
+      <div class="tecnico-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="tecnico-avatar"><img style="border-radius: 100%;" src="https://cdn-icons-png.flaticon.com/512/1085/1085421.png" alt="Tecnico 2" width="90px" height="90px"></div>
+        <div class="tecnico-info">
+          <h3>Jean Pierre</h3>
+          <div class="tecnico-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+            <span>4.0</span>
+          </div>
+          <ul class="tecnico-skills">
+            <li>Seguridad</li>
+            <li>Soporte Técnico</li>
+            <li>Mantenimiento</li>
+          </ul>
+          <a href="https://wa.me/573112210988?text=Hola%20tengo%20una%20inquietud" class="tecnico-contacto"><i class="fab fa-whatsapp"></i> Contactar</a>
+        </div>
+      </div>
+
+
+      <div class="tecnico-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="tecnico-avatar"><img style="border-radius: 100%;" src="https://cdn-icons-png.flaticon.com/512/1085/1085421.png" alt="Tecnico 2" width="90px" height="90px"></div>
+        <div class="tecnico-info">
+          <h3>Valentina</h3>
+          <div class="tecnico-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+            <span>4.0</span>
+          </div>
+          <ul class="tecnico-skills">
+            <li>Seguridad</li>
+            <li>Soporte Técnico</li>
+            <li>Mantenimiento</li>
+          </ul>
+          <a href="https://wa.me/573163338345?text=Hola%20tengo%20una%20inquietud" class="tecnico-contacto"><i class="fab fa-whatsapp"></i> Contactar</a>
+        </div>
+      </div>
+
+
+
+       <div class="tecnico-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="tecnico-avatar"><img style="border-radius: 100%;" src="https://cdn-icons-png.flaticon.com/512/1085/1085421.png" alt="Tecnico 2" width="90px" height="90px"></div>
+        <div class="tecnico-info">
+          <h3>Prado</h3>
+          <div class="tecnico-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+            <span>4.0</span>
+          </div>
+          <ul class="tecnico-skills">
+            <li>Seguridad</li>
+            <li>Soporte Técnico</li>
+            <li>Mantenimiento</li>
+          </ul>
+          <a href="https://wa.me/573157675974?text=Hola%20tengo%20una%20inquietud" class="tecnico-contacto"><i class="fab fa-whatsapp"></i> Contactar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compra/Venta -->
+  <section id="compra-venta" class="compra-venta">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-badge">Productos Electrónicos</span>
+      <h2 class="section-title">Sistemas Disponibles</h2>
+      <p class="section-subtitle">Explora el sistema Bell Tech para automatizar y mejorar tu infraestructura.</p>
+    </div>
+    <div class="compra-venta-grid">
+      
+      <div class="producto-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="producto-img"><img style="border-radius: 20px;" src="https://logg.api.cygnus.market/static/logg/Global/Notebook%20Dell%20Inspiron%203000%20-%2015,6%22%20-%20i3%20-%208GB%20-%20256GB%20SSD%20/4f10b63f501c4c5ab8351a0b8275aaf1.webp" alt="" width="300px" height="120px"></div>
+        <div class="producto-info">
+          <h3>Sistema Timbre Automatizado</h3>
+          <p>Controla y gestiona con precisión horarios de clase para tu institucion educativa</p>
+          <span class="producto-precio">$1.450.000 COP</span>
+          <a href="#contacto" class="producto-contacto">Solicitar Información</a>
+        </div>
+      </div>
+  </section>
+
+<section class="mision reclutamiento" id="reclutamiento">
+  <div class="mision-container">
+    <div class="mision-decor">
+      <div class="mision-glow"></div>
+      <div class="mision-shape rotate-3d"></div>
+      <div class="mision-particles"></div>
+    </div>
+    <div class="mision-content animated-float fade-in-up" data-delay="0.2s">
+      <h2 class="mision-title reclutamiento-titulo gradient-text">Nuestra Misión</h2>
+      <p class="mision-text reclutamiento-subtitulo glow-text">
+        En Bell Tech, buscamos mejorar la experiencia educativa en colegios e instituciones mediante sistemas de timbre automatizado. Nuestro compromiso es llevar tecnología precisa y confiable que optimice el tiempo, elimine interrupciones y brinde control a cada jornada escolar.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+  <!-- Reclutamiento Mejorado -->
+  <section id="reclutamiento" class="reclutamiento reclutamiento-impresionante">
+    <div class="reclutamiento-bg-anim"></div>
+    <div class="reclutamiento-content">
+      <div class="reclutamiento-logo-float">
+        <img src="images/logo.jpeg" alt="Syslity Logo" class="reclutamiento-logo-img logo-3d">
+        <div class="reclutamiento-card-float card-f1 card-3d">
+          <i class="fas fa-bolt animated-icon"></i>
+          <span>Instituciones</span>
+        </div>
+        <div class="reclutamiento-card-float card-f2 card-3d">
+          <i class="fas fa-users animated-icon"></i>
+          <span>Timbre Inteligente</span>
+        </div>
+        <div class="reclutamiento-card-float card-f3 card-3d">
+          <i class="fas fa-certificate animated-icon"></i>
+          <span>Horario Preciso</span>
+        </div>
+      </div>
+      <div class="reclutamiento-textos">
+        <h2 class="reclutamiento-titulo">Tecnología al ritmo de la educación</h2>
+        <p class="reclutamiento-subtitulo">
+          Únete a <span class="syslity-gradient">Bell Tech</span>, ofrecemos soluciones electrónicas que optimizan el tiempo académico.<br>
+        Automatiza el timbre, controla los horarios y mejora la gestión escolar desde una sola app.
+        </p>
+        <a href="https://wa.me/573112210988?text=Hola%20quiero%20unirme%20como%20t%C3%A9cnico%20a%20Syslity" target="_blank" class="btn-whatsapp-join animated-btn">
+          <i class="fab fa-whatsapp"></i> Contáctanos para más información
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="contact">
+    <div class="contact-container">
+      <div class="contact-content glassmorph" data-aos="fade-right">
+        <div class="section-header">
+          <span class="section-badge">Contacto</span>
+          <h2 class="section-title">¿Quieres integrar Bell Tech en tu institución?</h2>
+          <p class="section-subtitle">Estamos listos para ayudarte a mejorar la gestión escolar con automatización precisa.</p>
+        </div>
+        <div class="contact-info">
+          <div class="info-card"><i class="fas fa-envelope-open-text info-icon animated-icon"></i><span>belltech217@gmail.com</span></div>
+          <div class="info-card"><i class="fas fa-phone info-icon animated-icon"></i><span>+57 312 226 0344</span></div>
+        </div>
+      </div>
+      <div class="contact-form-wrapper glassmorph" data-aos="fade-left">
+        <form class="contact-form">
+          <div class="form-group">
+            <input type="text" class="form-input" placeholder=" " required>
+            <label class="form-label">Nombre</label>
+            <span class="input-icon animated-icon"><i class="fas fa-user"></i></span>
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-input" placeholder=" " required>
+            <label class="form-label">Correo</label>
+            <span class="input-icon animated-icon"><i class="fas fa-envelope-open-text"></i></span>
+          </div>
+          <div class="form-group">
+            <textarea class="form-input" placeholder=" " required></textarea>
+            <label class="form-label">Mensaje</label>
+            <span class="input-icon animated-icon"><i class="fas fa-comments"></i></span>
+          </div>
+          <button type="submit" class="submit-btn animated-btn"><span>Enviar</span> <i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Moderno -->
+  <footer class="footer glassmorph">
+    <div class="footer-content">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <img src="images/logo.jpeg" alt="Syslity Logo" class="footer-logo-img logo-3d">
+          
+        </div>
+        <div class="footer-description">Mantenimiento, reparación y tecnología a tu alcance.</div>
+        <div class="footer-social">
+          <a href="#" class="social-link animated-icon"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="social-link animated-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link animated-icon"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-newsletter glassmorph">
+        <h4>Suscríbete a nuestro Newsletter</h4>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Tu email" required>
+          <button type="submit" class="animated-btn"><i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-info"><p>&copy; 2025 Syslity. Todos los derechos reservados.</p></div>
+    </div>
+  </footer>
+  <div class="scroll-top animated-btn"><i class="fas fa-arrow-up"></i></div>
+
+  <script>
+    // Animación de transición entre secciones al hacer scroll
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('section');
+      const revealSections = () => {
+        const trigger = window.innerHeight * 0.92;
+        sections.forEach(section => {
+          const top = section.getBoundingClientRect().top;
+          if (top < trigger) section.classList.add('visible');
+        });
+      };
+      window.addEventListener('scroll', revealSections);
+      revealSections();
+    });
+
+    /* Pseudocódigo JS para activar el slide */
+
+  const el = document.querySelector('.mision-content');
+  const obs = new IntersectionObserver(([e]) => e.isIntersecting && e.target.classList.add('visible'), {
+    threshold: 0.3
+  });
+  obs.observe(el);
+
+
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+    const animatedElements = document.querySelectorAll('.fade-in-up');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    animatedElements.forEach(el => {
+      observer.observe(el);
+    });
+  });
+
+
+
+  </script>
+</body>
+</html>
