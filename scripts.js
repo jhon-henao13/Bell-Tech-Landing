@@ -1,5 +1,5 @@
 // =====================
-// Syslity - Scripts UI/UX Modernos (REESTRUCTURADO)
+// Bell Tech - Scripts UI/UX Modernos (REESTRUCTURADO)
 // =====================
 const body = document.body;
 
